@@ -33,10 +33,12 @@
 </div>
 
 <script>
+
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-    const role = document.getElementById('role-select').value;
+    const roleSelect = document.getElementById('role-select');
+    const role = roleSelect.value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -45,15 +47,14 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     let url;
     if (role === "Преподаватель") {
-        url = "@"; // URL страницы для преподавателей
+        url = "index2.html"; // URL страницы для преподавателей
     } else if (role === "Ученик") {
-        url = "ученик.html"; // URL страницы для учеников
-    } else {
-        alert("Неизвестная роль");
-        return; // Выходим из функции, если роль неизвестна
-    }
+        url = "index7.html"; // URL страницы для учеников
+    } 
 
-    window.location.href = url; // Перенаправляем пользователя на выбранную страницу
+    if (url) {
+        window.location.href = url; // Перенаправляем пользователя на выбранную страницу
+    }
 });
 </script>
 
